@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import usersActions from '../actions/users'
-//import { Container, Row, Col } from 'reactstrap';
+import { connect } from 'react-redux';
+import usersActions from '../actions/users';
 
 const { loadUsers } = usersActions;
 
