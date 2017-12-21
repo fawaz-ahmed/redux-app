@@ -44,9 +44,11 @@ export default function register() {
 }
 
 function registerValidSW(swUrl) {
+  console.log('url : ' + swUrl);
   navigator.serviceWorker
-    .register(swUrl)
-    .then(registration => {
+    .register(swUrl, {
+      scope: '/redux-app/'
+    }).then(registration => {
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         installingWorker.onstatechange = () => {
