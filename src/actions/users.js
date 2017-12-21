@@ -1,5 +1,6 @@
 const usersActions = {
   LOAD_USERS: 'LOAD_USERS',
+  SEARCH: 'SEARCH',
   loadUsers: () => {
     return (dispatch) => {
       fetch('https://api.github.com/users').then(response => {
@@ -12,6 +13,14 @@ const usersActions = {
           }, 2000);
         });
       });
+    };
+  },
+  onSearch: (searchText) => {
+    return (dispatch) => {
+       dispatch({
+          type: usersActions.SEARCH,
+          searchText
+        });
     };
   },
 };

@@ -10,14 +10,11 @@ class User extends Component {
       cursor: 'pointer',
       borderRadius: 10,
       padding: 10,
-      marginBottom: 5,
       color: 'white',
-      display: 'inline-block',
-      minWidth: 200,
-      marginRight: 10,
       textAlign: 'left',
       background: color,
-      minHeight: 100,
+      width: '100%',
+      height: '100%'
     };
 
     return (

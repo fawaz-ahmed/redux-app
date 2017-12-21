@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BounceLoader } from 'react-spinners';
+import { Container, Row, Col } from 'reactstrap';
 import usersActions from '../actions/users';
 import User from './user';
+import Search from './search';
 
-const { loadUsers } = usersActions;
+const { loadUsers, onSearch } = usersActions;
 
 const colors = ['dodgerblue', 'lightcoral', 'magenta', 'darkorange', 'deeppink', 'mediumseagreen'];
 
@@ -14,32 +16,39 @@ class App extends Component {
     this.props.loadUsers();
   }
   render() {
-    const { users, isLoaded } = this.props;
+    const { filteredUsers, isLoaded, onSearch } = this.props;
 
     const style = {
-      padding: '10px 2%',
-      textAlign: 'center'
+      marginTop: 20,
     };
 
+    const colStyle = {
+      marginBottom: 10,
+      minHeight: 100,
+    };
+
+    if (!isLoaded) {
+      return (
+        <div style={{ margin: '10% calc(50% - 50px)' }}>
+          <BounceLoader color={'#36D7B7'} loading size={100} />
+        </div>
+      );
+    }
+
     return (
-      <div style={style}>
-        {!isLoaded && (
-          <div style={{ margin: '20% calc(50% - 50px)' }}>
-            <BounceLoader
-              color={'#36D7B7'}
-              loading={true}
-              size={100}
-            />
-          </div>
-        )}
-        {users.map(user=> (
-          <User
-            key={`user-${user.id}`}
-            user={user}
-            color={colors[Math.floor(Math.random() * colors.length)]}
-          />
-        ))}
-      </div>
+      <Container style={style}>
+        <Search onSearch={onSearch} />
+        <Row>
+          {filteredUsers.map(user=> (
+            <Col key={`user-${user.id}`} style={colStyle} xs={12} sm={6} md={4} lg={3} xl={2}>
+              <User
+                user={user}
+                color={colors[Math.floor(Math.random() * colors.length)]}
+              />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     );
   }
 }
@@ -49,5 +58,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-  loadUsers
+  loadUsers,
+  onSearch
 })(App);
