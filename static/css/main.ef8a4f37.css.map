@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.less"],"names":[],"mappings":"AAAA,UACE,SACA,UACA,uBACA,kBACA","file":"static/css/main.ef8a4f37.css","sourcesContent":["html, body {\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n  overflow-x: hidden;\n  color: deeppink;\n}\n\n\n\n// WEBPACK FOOTER //\n// ./src/index.less"],"sourceRoot":""}
