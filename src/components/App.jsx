@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import usersActions from '../actions/users';
+import User from './user';
 
 const { loadUsers } = usersActions;
+
+const colors = ['dodgerblue', 'lightcoral', 'magenta', 'darkorange', 'deeppink'];
 
 class App extends Component {
 
@@ -12,25 +15,19 @@ class App extends Component {
   render() {
     const { users } = this.props;
 
-    const parentStyle = {
-      margin: 20,
-    };
-
-    const itemStyle = {
-      cursor: 'pointer',
-      borderRadius: 10,
-      padding: 10,
-      border: '2px solid lightgrey',
-      marginBottom: 5,
-      color: 'darkgrey',
+    const style = {
+      padding: '10px 2%',
+      textAlign: 'center',
     };
 
     return (
-      <div className="App" style={parentStyle}>
+      <div style={style}>
         {users.map(user=> (
-          <div key={`user-${user.id}`} style={itemStyle}>
-            {user.login}<br />
-          </div>
+          <User
+            key={`user-${user.id}`}
+            user={user}
+            color={colors[Math.floor(Math.random() * colors.length)]}
+          />
         ))}
       </div>
     );
