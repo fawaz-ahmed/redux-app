@@ -6,7 +6,7 @@ import User from './user';
 
 const { loadUsers } = usersActions;
 
-const colors = ['dodgerblue', 'lightcoral', 'magenta', 'darkorange', 'deeppink'];
+const colors = ['dodgerblue', 'lightcoral', 'magenta', 'darkorange', 'deeppink', 'seagreen'];
 
 class App extends Component {
 
