@@ -3,13 +3,12 @@ const usersActions = {
   loadUsers: () => {
     return (dispatch) => {
       return fetch('https://api.github.com/users').then(response => {
-        response.json().then(users => {
+        setTimeout(() => {
           dispatch({
             type: usersActions.LOAD_USERS,
-            users
+            users: response.json()
           });
-        });
-
+        }, 3000);
       });
     };
   },

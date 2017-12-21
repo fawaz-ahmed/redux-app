@@ -4,8 +4,8 @@
   "private": true,
   "homepage": "https://fawaz-ahmed.github.io/redux-app/",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "bootstrap": "4.0.0-beta.2",
-    "core-js": "^2.5.3",
     "custom-react-scripts": "0.2.1",
     "jquery": "^3.2.1",
     "popper.js": "^1.12.9",
