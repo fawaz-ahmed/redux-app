@@ -34,6 +34,8 @@ class App extends Component {
       );
     }
 
+    console.log(filteredUsers);
+
     return (
       <Container style={style}>
         <Search onSearch={onSearch} />
