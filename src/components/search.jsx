@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Form, InputGroup, Input, InputGroupAddon, FormGroup } from 'reactstrap';
+import { InputGroup, Input, InputGroupAddon, FormGroup } from 'reactstrap';
 import SearchIcon from 'react-icons/lib/fa/search';
 
 class Search extends Component {

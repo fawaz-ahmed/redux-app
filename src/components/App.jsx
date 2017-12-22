@@ -24,13 +24,12 @@ class App extends Component {
 
     const colStyle = {
       marginBottom: 10,
-      minHeight: 100,
     };
 
     if (!isLoaded) {
       return (
         <div style={{ margin: '10% calc(50% - 50px)' }}>
-          <BounceLoader color={'#36D7B7'} loading size={100} />
+          <BounceLoader color={'orange'} loading size={100} />
         </div>
       );
     }

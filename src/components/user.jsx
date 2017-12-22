@@ -14,7 +14,8 @@ class User extends Component {
       textAlign: 'left',
       background: color,
       width: '100%',
-      height: '100%'
+      height: '100%',
+      minHeight: 100,
     };
 
     return (
