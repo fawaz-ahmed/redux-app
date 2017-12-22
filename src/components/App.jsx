@@ -1,29 +1,35 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BounceLoader } from 'react-spinners';
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 import usersActions from '../actions/users';
-import User from './user';
+import UserList from './list';
 import Search from './search';
+import FollowersModal from './modal'
 
-const { loadUsers, onSearch } = usersActions;
-
-const colors = ['dodgerblue', 'lightcoral', 'magenta', 'darkorange', 'deeppink', 'mediumseagreen'];
+const { loadUsers, onSearch, onUserSelected, onModalClose } = usersActions;
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.onCloseModal = this.onCloseModal.bind(this);
+  }
 
   componentWillMount() {
     this.props.loadUsers();
   }
+
+  onCloseModal() {
+    this.props.onModalClose();
+  }
+
   render() {
-    const { filteredUsers, isLoaded, onSearch } = this.props;
+    const { filteredUsers, isLoaded, onSearch, onUserSelected,
+      selectedUser, showModal, followers } = this.props;
 
     const style = {
       marginTop: 20,
-    };
-
-    const colStyle = {
-      marginBottom: 10,
     };
 
     if (!isLoaded) {
@@ -34,21 +40,16 @@ class App extends Component {
       );
     }
 
-    console.log(filteredUsers);
-
     return (
       <Container style={style}>
         <Search onSearch={onSearch} />
-        <Row>
-          {filteredUsers.map(user=> (
-            <Col key={`user-${user.id}`} style={colStyle} xs={12} sm={6} md={4} lg={3} xl={2}>
-              <User
-                user={user}
-                color={colors[Math.floor(Math.random() * colors.length)]}
-              />
-            </Col>
-          ))}
-        </Row>
+        <UserList users={filteredUsers} onUserSelected={onUserSelected} />
+        <FollowersModal
+          showModal={showModal}
+          user={selectedUser}
+          onClose={this.onCloseModal}
+          followers={followers}
+        />
       </Container>
     );
   }
@@ -60,5 +61,7 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, {
   loadUsers,
-  onSearch
+  onSearch,
+  onUserSelected,
+  onModalClose
 })(App);

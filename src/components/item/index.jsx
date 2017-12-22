@@ -4,8 +4,14 @@ import { Button } from 'reactstrap';
 
 class User extends Component {
 
+  constructor() {
+    super();
+    this.showDetails = this.showDetails.bind(this);
+  }
+
   showDetails() {
-    // console.log('show details');
+    const { user, onClick } = this.props;
+    onClick(user);
   }
 
   render() {
@@ -53,6 +59,7 @@ class User extends Component {
 User.propTypes = {
   user: PropTypes.object,
   color: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default User;
