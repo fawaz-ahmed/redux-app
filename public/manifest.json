@@ -4,27 +4,27 @@
   "lang": "en",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "%PUBLIC_URL%/favicon.ico",
       "sizes": "16x16",
       "type": "image/x-icon"
     }, {
-      "src": "favicon.ico",
+      "src": "%PUBLIC_URL%/favicon.ico",
       "sizes": "32x32",
       "type": "image/x-icon"
     }, {
-      "src": "favicon.ico",
+      "src": "%PUBLIC_URL%/favicon.ico",
       "sizes": "48x48",
       "type": "image/x-icon"
     }, {
-      "src": "favicon.ico",
+      "src": "%PUBLIC_URL%/favicon.ico",
       "sizes": "64x64",
       "type": "image/x-icon"
     }, {
-      "src": "favicon.ico",
+      "src": "%PUBLIC_URL%/favicon.ico",
       "sizes": "128x128",
       "type": "image/x-icon"
     }, {
-      "src": "favicon.ico",
+      "src": "%PUBLIC_URL%/favicon.ico",
       "sizes": "256x256",
       "type": "image/x-icon"
     }
@@ -32,6 +32,6 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "scope": "/redux-app/",
-  "start_url": "/redux-app/index.html"
+  "scope": "%PUBLIC_URL%/",
+  "start_url": "%PUBLIC_URL%/index.html"
 }
