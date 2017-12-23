@@ -35,7 +35,7 @@ class App extends Component {
     if (!isLoaded) {
       return (
         <div style={{ margin: '10% calc(50% - 50px)' }}>
-          <BounceLoader color={'orange'} loading size={100} />
+          <BounceLoader color={'turquoise'} loading size={100} />
         </div>
       );
     }
