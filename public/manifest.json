@@ -8,30 +8,49 @@
       "sizes": "16x16",
       "type": "image/x-icon"
     }, {
-      "src": "favicon.ico",
+      "src": "iconx/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }, {
+      "src": "iconx/favicon-32x32.png",
       "sizes": "32x32",
-      "type": "image/x-icon"
+      "type": "image/png"
     }, {
-      "src": "favicon.ico",
-      "sizes": "48x48",
-      "type": "image/x-icon"
+      "src": "iconx/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     }, {
-      "src": "favicon.ico",
-      "sizes": "64x64",
-      "type": "image/x-icon"
+      "src": "iconx/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }, {
-      "src": "favicon.ico",
-      "sizes": "128x128",
-      "type": "image/x-icon"
+      "src": "iconx/apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }, {
-      "src": "favicon.ico",
-      "sizes": "256x256",
-      "type": "image/x-icon"
+      "src": "iconx/browserconfig/tile70x70.png",
+      "sizes": "70x70",
+      "type": "image/png"
+    }, {
+      "src": "iconx/browserconfig/tile150x150.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    }, {
+      "src": "iconx/browserconfig/tile310x150.png",
+      "sizes": "310x150",
+      "type": "image/png"
+    }, {
+      "src": "iconx/browserconfig/tile310x310.png",
+      "sizes": "310x310",
+      "type": "image/png"
     }
   ],
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "scope": "/redux-app/",
-  "start_url": "/redux-app/index.html"
+  "start_url": "/redux-app/index.html",
+  "serviceworker": {
+    "scope": "/redux-app/"
+  }
 }
