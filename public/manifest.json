@@ -1,6 +1,6 @@
 {
-  "short_name": "React-redux App by Fawaz Ahmed",
-  "name": "Sample app for react with redux by Fawaz Ahmed",
+  "short_name": "React redux pwa app | Fawaz Ahmed",
+  "name": "Sample pwa app built with react and redux | Fawaz Ahmed",
   "lang": "en",
   "icons": [
     {
@@ -45,12 +45,10 @@
       "type": "image/png"
     }
   ],
-  "display": "fullscreen",
-  "theme_color": "#000000",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "scope": "/redux-app/",
-  "start_url": "/redux-app/index.html",
-  "serviceworker": {
-    "scope": "/redux-app/"
-  }
+  "start_url": "/redux-app/"
 }
